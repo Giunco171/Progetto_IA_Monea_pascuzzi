@@ -1,0 +1,53 @@
+WARNING: sun.reflect.Reflection.getCallerClass is not supported. This will impact performance.
+
+parsing domain file "domain.pddl" done successfully
+parsing problem file "problem.pddl" done successfully
+# WARNING: Unable to get Instrumentation. Dynamic Attach failed. You may add this JAR as -javaagent manually, or supply -Djdk.attach.allowAttachSelf
+# WARNING: Unable to attach Serviceability Agent. You can try again with escalated privileges. Two options: a) use -Djol.tryWithSudo=true to try with sudo; b) echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope
+
+problem instantiation done successfully (118 actions, 57 fluents)
+
+* Starting A* search with heuristic: AJUSTED_SUM
+* Starting A* search 
+* A* search succeeded
+
+found plan as follows:
+
+00: (fill_box_in_warehouse robot box2 screw warehouse) [0]
+01: ( fill_box_in_warehouse robot box3 bolt warehouse) [0]
+02: ( fill_box_in_warehouse robot box1 bolt warehouse) [0]
+03: (        put_up_box_from_loc robot box3 warehouse) [0]
+04: (           move_to_loc robot warehouse location1) [0]
+05: (           move_to_loc robot location1 location2) [0]
+06: (           enter_ws robot location2 workstation3) [0]
+07: (      put_down_box_in_ws robot box3 workstation3) [0]
+08: (    empty_box_in_ws robot box3 workstation3 bolt) [0]
+09: (            exit_ws robot location2 workstation3) [0]
+10: (           move_to_loc robot location2 location1) [0]
+11: (           move_to_loc robot location1 warehouse) [0]
+12: (        put_up_box_from_loc robot box2 warehouse) [0]
+13: (           move_to_loc robot warehouse location1) [0]
+14: (           move_to_loc robot location1 location2) [0]
+15: (           enter_ws robot location2 workstation3) [0]
+16: (      put_down_box_in_ws robot box2 workstation3) [0]
+17: (   empty_box_in_ws robot box2 workstation3 screw) [0]
+18: (            exit_ws robot location2 workstation3) [0]
+19: (           move_to_loc robot location2 location1) [0]
+20: (           move_to_loc robot location1 warehouse) [0]
+21: (        put_up_box_from_loc robot box1 warehouse) [0]
+22: (           move_to_loc robot warehouse location1) [0]
+23: (           move_to_loc robot location1 location2) [0]
+24: (           enter_ws robot location2 workstation2) [0]
+25: (      put_down_box_in_ws robot box1 workstation2) [0]
+26: (    empty_box_in_ws robot box1 workstation2 bolt) [0]
+
+time spent:       0.03 seconds parsing 
+                  0.07 seconds encoding 
+                  1.69 seconds searching
+                  1.79 seconds total time
+
+memory used:      0.52 MBytes for problem representation
+                 13.69 MBytes for searching
+                 14.21 MBytes total
+
+

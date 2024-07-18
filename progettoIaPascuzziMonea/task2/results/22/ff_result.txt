@@ -1,0 +1,44 @@
+WARNING: sun.reflect.Reflection.getCallerClass is not supported. This will impact performance.
+
+parsing domain file "domain2.pddl" done successfully
+parsing problem file "problem2.pddl" done successfully
+# WARNING: Unable to get Instrumentation. Dynamic Attach failed. You may add this JAR as -javaagent manually, or supply -Djdk.attach.allowAttachSelf
+# WARNING: Unable to attach Serviceability Agent. You can try again with escalated privileges. Two options: a) use -Djol.tryWithSudo=true to try with sudo; b) echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope
+
+problem instantiation done successfully (190 actions, 63 fluents)
+
+* Starting ENFORCED_HILL_CLIMBING search with FAST_FORWARD heuristic 
+* ENFORCED_HILL_CLIMBING search succeeded
+
+found plan as follows:
+
+00: ( fill_box_in_warehouse robot box1 bolt warehouse carrier) [0]
+01: (  load_boxes_from_loc robot box1 warehouse carrier slot1) [0]
+02: (fill_box_in_warehouse robot box2 screw warehouse carrier) [0]
+03: (  load_boxes_from_loc robot box2 warehouse carrier slot2) [0]
+04: (           move_to_loc robot warehouse location1 carrier) [0]
+05: (           move_to_loc robot location1 location2 carrier) [0]
+06: (           enter_ws robot location2 workstation3 carrier) [0]
+07: (put_down_box_in_ws robot box2 workstation3 carrier slot1) [0]
+08: (   empty_box_in_ws robot box2 workstation3 screw carrier) [0]
+09: (put_down_box_in_ws robot box1 workstation3 carrier slot2) [0]
+10: (    empty_box_in_ws robot box1 workstation3 bolt carrier) [0]
+11: (            exit_ws robot location2 workstation3 carrier) [0]
+12: (           move_to_loc robot location2 location1 carrier) [0]
+13: (     move_to_warehouse robot location1 warehouse carrier) [0]
+14: ( fill_box_in_warehouse robot box3 bolt warehouse carrier) [0]
+15: (  load_boxes_from_loc robot box3 warehouse carrier slot1) [0]
+16: (           move_to_loc robot warehouse location1 carrier) [0]
+17: (           move_to_loc robot location1 location2 carrier) [0]
+18: (           enter_ws robot location2 workstation2 carrier) [0]
+19: (put_down_box_in_ws robot box3 workstation2 carrier slot1) [0]
+20: (    empty_box_in_ws robot box3 workstation2 bolt carrier) [0]
+
+time spent:       0.03 seconds parsing 
+                  0.06 seconds encoding 
+                  1.36 seconds searching
+                  1.45 seconds total time
+
+memory used:      0.78 MBytes for problem representation
+                  0.00 MBytes for searching
+                  0.78 MBytes total

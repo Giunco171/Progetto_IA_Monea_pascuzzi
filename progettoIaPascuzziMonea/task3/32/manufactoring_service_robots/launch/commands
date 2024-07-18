@@ -1,0 +1,47 @@
+set instance ROBOT robot
+
+set instance CARRIER carrier
+
+set instance WAREHOUSE location
+set instance LOCATION1 location
+set instance LOCATION2 location
+
+set instance WORKSTATION1 workstation
+set instance WORKSTATION2 workstation
+set instance WORKSTATION3 workstation
+
+set instance BOX1 box
+set instance BOX2 box
+set instance BOX3 box
+
+set instance BOLT content
+set instance SCREW content
+
+set function (= (capacity CARRIER) 2)
+set function (= (load CARRIER) 0)
+
+set predicate (atloc ROBOT WAREHOUSE)
+
+set predicate (joined ROBOT CARRIER)
+
+set predicate (iswarehouse WAREHOUSE)
+
+set predicate (atloc BOX1 WAREHOUSE)
+set predicate (atloc BOX2 WAREHOUSE)
+set predicate (atloc BOX3 WAREHOUSE)
+
+set predicate (atloc BOLT WAREHOUSE)
+set predicate (atloc SCREW WAREHOUSE)
+
+set predicate (isempty BOX1)
+set predicate (isempty BOX2)
+set predicate (isempty BOX3)
+
+set predicate (atloc WORKSTATION1 LOCATION1)
+set predicate (atloc WORKSTATION2 LOCATION2)
+set predicate (atloc WORKSTATION3 LOCATION2)
+
+set predicate (connected WAREHOUSE LOCATION1)
+set predicate (connected LOCATION1 LOCATION2)
+set predicate (connected LOCATION1 WAREHOUSE)
+set predicate (connected LOCATION2 LOCATION1)
